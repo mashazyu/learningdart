@@ -31,7 +31,7 @@ jobs:
         with:
            channel: stable
            architecture: x64
-           flutter-version: '3.19.0'
+           flutter-version: '3.29.1'
 
       - name: Get dependencies
         run: flutter pub get
