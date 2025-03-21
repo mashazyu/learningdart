@@ -2,9 +2,7 @@ name: Run Tests
 
 on:
     pull_request:
-      branches: [main]
-    push:
-      branches-ignore: [main]
+      types: [opened, synchronize]
 
 concurrency:
     group: flutter-tests-${{ github.ref }}
@@ -27,6 +25,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           flutter-version: 'stable'
+          architecture: x64
 
       - name: Get dependencies
         run: flutter pub get
