@@ -1,0 +1,23 @@
+name: Run Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  test:
+    runs-on: macOS-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: futureware-tech/simulator-action@v3
+        with:
+          model: 'iPhone 18'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - run: flutter pub get
+      - run: flutter test integration_test

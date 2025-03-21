@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1022044451511",
+    "project_id": "notes-learning-flutter-mwald",
+    "storage_bucket": "notes-learning-flutter-mwald.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022044451511:android:d900e44eed245313979332",
+        "android_client_info": {
+          "package_name": "com.example.learningdart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZiVgwyRkGjYAz9gBVKX3QVXapomQALt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
