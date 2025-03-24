@@ -9,6 +9,7 @@ void main() {
     ) async {
       // Build the LoginView widget
       await tester.pumpWidget(const MaterialApp(home: LoginView()));
+      
       // Verify AppBar title
       expect(find.text('Login'), findsOneWidget);
     });
