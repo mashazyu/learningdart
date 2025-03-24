@@ -1,23 +1,40 @@
 name: Run Tests
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+    pull_request:
+       types: [opened, synchronize]
+
+concurrency:
+    group: flutter-tests-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
   test:
     runs-on: macOS-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - uses: futureware-tech/simulator-action@v3
+      - name: Setup Emulator
+        uses: futureware-tech/simulator-action@v3
         with:
-          model: 'iPhone 18'
+           model: 'iPhone 15'
 
-      - uses: subosito/flutter-action@v2
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
         with:
-          channel: 'stable'
+            sdk: '3.7.0'
 
-      - run: flutter pub get
-      - run: flutter test integration_test
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+           channel: stable
+           architecture: x64
+           flutter-version: '3.29.1'
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Run tests
+        run: flutter test
