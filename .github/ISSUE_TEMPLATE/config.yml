@@ -1,1 +1,9 @@
 blank_issues_enabled: true
+
+issue_templates:
+  - name: Bug Report
+    description: "Report a bug in the project."
+    file: 1-bug-report.md
+  - name: Feature Request
+    description: "Suggest a new feature or enhancement."
+    file: 2-feature-request.md
