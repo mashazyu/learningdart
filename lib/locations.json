@@ -1,1 +1,14 @@
-["other", "muenster", "wiesbaden", "arnsberg", "lalaland"]
+[
+    {
+        "label": "Münster",
+        "value": "muenster"
+      },
+      {
+        "label": "Wiesbaden",
+        "value": "wiesbaden"
+      },
+      {
+        "label": "Arnsberg",
+        "value": "arnsberg"
+      }
+]
